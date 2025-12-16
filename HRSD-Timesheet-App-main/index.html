@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HRSD Timesheet</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<script src="script.js"></script>
+
+<body>
+
+    <header class="topbar">
+        <div class="container topbar-flex">
+            <h1 class="brand">Chrono<span>Log</span></h1>
+
+            <nav class="nav">
+                <a class="active"><i class="fas fa-clock"></i> Enter Hours</a>
+                <a href="approval.html"><i class="fas fa-check-circle"></i> Approval</a>
+                <a><i class="fas fa-user"></i> Profile</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="dashboard">
+        <div class="container">
+
+            <div class="page-head">
+                <h2><i class="fas fa-calendar-week"></i> Weekly Time Entry</h2>
+                <p>Employee: Santhosh Kumar | Week: 01 jan – 14 Dec 2026</p>
+            </div>
+
+            <div class="card">
+
+                <table class="timesheet">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Project</th>
+                            <th>Category</th>
+                            <th>Hours</th>
+                            <th>Notes</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td><input type="date" value="2025-12-09"></td>
+                            <td><input type="text" value="Project Alpha"></td>
+                            <td>
+                                <select>
+                                    <option>Regular</option>
+                                    <option>Overtime</option>
+                                    <option>Leave</option>
+                                </select>
+                            </td>
+                            <td><input type="number" value="8"></td>
+                            <td><input type="text" value="Frontend development"></td>
+                            <td>
+                                <button class="icon-btn danger">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <button class="btn outline">
+                    <i class="fas fa-plus"></i> Add Row
+                </button>
+            </div>
+
+            <div class="bottom-bar">
+                <div class="hours-box">
+                    Total Hours: <span>8.0</span>
+                </div>
+
+                <div class="actions">
+                    <button class="btn success">
+                        <i class="fas fa-save"></i> Save
+                    </button>
+                    <button class="btn primary">
+                        <i class="fas fa-paper-plane"></i> Submit
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        © 2025 ChronoLog Project
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,234 @@
+/* =========================
+   ROOT COLORS
+========================= */
+:root {
+    --bg-main: #cfeff3;
+    --card-bg: #ffffff;
+    --primary: #0aa6b5;
+    --primary-dark: #087f8c;
+    --text-main: #1a1a1a;
+    --muted: #666;
+    --danger: #e63946;
+    --success: #2a9d8f;
+    --border-soft: #e6e6e6;
+}
+
+/* =========================
+   RESET
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    color: var(--text-main);
+    background:
+        linear-gradient(
+            rgba(207, 239, 243, 0.85),
+            rgba(207, 239, 243, 0.85)
+        ),
+        url("https://img.freepik.com/premium-photo/alarm-clock-cyan-background-minimalistic-flat-laywith-copy-space-photo-text-product-blank_941600-202403.jpg?semt=ais_hybrid&w=740&q=80");
+
+    background-size: cover;
+    background-position: center right;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* =========================
+   TOP BAR
+========================= */
+.topbar {
+    background: transparent;
+    padding: 25px 0;
+}
+
+.topbar-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand {
+    font-size: 28px;
+    font-weight: 800;
+}
+
+.brand span {
+    color: var(--primary);
+}
+
+.nav a {
+    margin-left: 25px;
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 500;
+    opacity: 0.7;
+}
+
+.nav a.active,
+.nav a:hover {
+    opacity: 1;
+    color: var(--primary-dark);
+}
+
+/* =========================
+   PAGE HEADER
+========================= */
+.page-head {
+    margin-bottom: 25px;
+}
+
+.page-head h2 {
+    font-size: 26px;
+    margin-bottom: 5px;
+}
+
+.page-head p {
+    color: var(--muted);
+}
+
+/* =========================
+   CARD
+========================= */
+.card {
+    background: var(--card-bg);
+    border-radius: 18px;
+    padding: 25px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+/* =========================
+   TABLE
+========================= */
+.timesheet {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.timesheet th {
+    text-align: left;
+    font-size: 14px;
+    color: var(--muted);
+    padding-bottom: 10px;
+}
+
+.timesheet td {
+    padding: 12px 6px;
+}
+
+.timesheet input,
+.timesheet select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid var(--border-soft);
+    background: #f9f9f9;
+}
+
+.timesheet input:focus,
+.timesheet select:focus {
+    outline: none;
+    border-color: var(--primary);
+    background: #fff;
+}
+
+/* =========================
+   ICON BUTTON
+========================= */
+.icon-btn {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.icon-btn.danger {
+    color: var(--danger);
+}
+
+/* =========================
+   BUTTONS
+========================= */
+.btn {
+    padding: 12px 22px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.btn i {
+    margin-right: 6px;
+}
+
+.btn.outline {
+    background: transparent;
+    border: 2px dashed var(--primary);
+    color: var(--primary);
+}
+
+.btn.outline:hover {
+    background: var(--primary);
+    color: white;
+}
+
+.btn.success {
+    background: var(--success);
+    color: white;
+}
+
+.btn.primary {
+    background: var(--primary);
+    color: white;
+}
+
+.btn.success:hover,
+.btn.primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+/* =========================
+   BOTTOM BAR
+========================= */
+.bottom-bar {
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hours-box {
+    background: #f1fbfc;
+    padding: 14px 22px;
+    border-radius: 14px;
+    font-weight: 600;
+    color: var(--primary-dark);
+}
+
+/* =========================
+   FOOTER
+========================= */
+.footer {
+    text-align: center;
+    padding: 25px 0;
+    color: var(--muted);
+    font-size: 14px;
+}

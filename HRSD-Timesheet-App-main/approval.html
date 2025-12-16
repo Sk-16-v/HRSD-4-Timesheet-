@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HRSD | Manager Approval</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<script src="scriptt.js"></script>
+
+<body>
+
+    <header class="topbar">
+        <div class="container topbar-flex">
+            <h1 class="brand">Chrono<span>Log</span></h1>
+
+            <nav class="nav">
+                <a href="index.html"><i class="fas fa-clock"></i> Enter Hours</a>
+                <a class="active"><i class="fas fa-check-circle"></i> Approval</a>
+                <a><i class="fas fa-user"></i> Profile</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="dashboard">
+        <div class="container">
+
+            <div class="page-head">
+                <h2><i class="fas fa-user-shield"></i> Manager Approval Panel</h2>
+                <p>Review and approve employee timesheets</p>
+            </div>
+
+            <!-- Approval Card -->
+            <div class="card">
+
+                <table class="timesheet">
+                    <thead>
+                        <tr>
+                            <th>Employee</th>
+                            <th>Week Ending</th>
+                            <th>Total Hours</th>
+                            <th>Status</th>
+                            <th>View</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr data-id="101">
+                            <td>V Chirudeep</td>
+                            <td>14 Dec 2025</td>
+                            <td><strong>45.5</strong></td>
+                            <td><span class="badge pending">Pending</span></td>
+                            <td>
+                                <button class="icon-btn">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </td>
+                            <td class="action-cell">
+                                <button class="btn success btn-sm approve">
+                                    <i class="fas fa-check"></i>
+                                </button>
+                                <button class="btn danger btn-sm reject">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-id="102">
+                            <td>S Lithish</td>
+                            <td>14 Dec 2025</td>
+                            <td><strong>38.0</strong></td>
+                            <td><span class="badge pending">Pending</span></td>
+                            <td>
+                                <button class="icon-btn">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </td>
+                            <td class="action-cell">
+                                <button class="btn success btn-sm approve">
+                                    <i class="fas fa-check"></i>
+                                </button>
+                                <button class="btn danger btn-sm reject">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>V Santhosh Kumar</td>
+                            <td>07 Dec 2025</td>
+                            <td><strong>40.0</strong></td>
+                            <td><span class="badge approved">Approved</span></td>
+                            <td>
+                                <button class="icon-btn">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </td>
+                            <td>—</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        © 2025 ChronoLog Project
+    </footer>
+
+    <script>
+        /* ===============================
+           MANAGER APPROVAL SCRIPT
+        ================================ */
+
+        document.querySelectorAll(".approve").forEach(btn => {
+            btn.addEventListener("click", () => {
+                const row = btn.closest("tr");
+                updateStatus(row, "Approved", "approved");
+            });
+        });
+
+        document.querySelectorAll(".reject").forEach(btn => {
+            btn.addEventListener("click", () => {
+                const row = btn.closest("tr");
+                updateStatus(row, "Rejected", "rejected");
+            });
+        });
+
+        function updateStatus(row, text, cls) {
+            if (!confirm(`Confirm ${text} this timesheet?`)) return;
+
+            const statusCell = row.querySelector(".badge");
+            statusCell.textContent = text;
+            statusCell.className = `badge ${cls}`;
+
+            row.querySelector(".action-cell").innerHTML = "—";
+        }
+    </script>
+
+</body>
+
+</html>
